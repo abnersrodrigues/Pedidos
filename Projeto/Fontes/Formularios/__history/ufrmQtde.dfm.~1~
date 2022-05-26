@@ -1,0 +1,73 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 219
+  ClientWidth = 309
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 309
+    Height = 219
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 72
+    ExplicitTop = 88
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object Panel2: TPanel
+      Left = 1
+      Top = 177
+      Width = 307
+      Height = 41
+      Align = alBottom
+      TabOrder = 0
+      ExplicitLeft = 64
+      ExplicitTop = 64
+      ExplicitWidth = 185
+      object SpeedButton1: TSpeedButton
+        Left = 1
+        Top = 1
+        Width = 305
+        Height = 39
+        Align = alClient
+        Caption = 'OK'
+        ExplicitLeft = 112
+        ExplicitTop = 24
+        ExplicitWidth = 23
+        ExplicitHeight = 22
+      end
+    end
+    object Panel3: TPanel
+      Left = 1
+      Top = 42
+      Width = 307
+      Height = 135
+      Align = alClient
+      Caption = 'NOVA QUANTIDADE'
+      TabOrder = 1
+      ExplicitHeight = 119
+    end
+    object Panel4: TPanel
+      Left = 1
+      Top = 1
+      Width = 307
+      Height = 41
+      Align = alTop
+      Caption = 'NOVA QUANTIDADE'
+      TabOrder = 2
+      ExplicitLeft = 64
+      ExplicitTop = 64
+      ExplicitWidth = 185
+    end
+  end
+end

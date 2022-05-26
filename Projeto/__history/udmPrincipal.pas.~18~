@@ -1,0 +1,69 @@
+unit udmPrincipal;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQL,
+  FireDAC.Phys.MySQLDef, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.UI;
+
+type
+  TdmPrincipal = class(TDataModule)
+    CONEXAO: TFDConnection;
+    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+    qry_clientes: TFDQuery;
+    qry_produtos: TFDQuery;
+    qry_pedidos: TFDQuery;
+    qry_pedidos_itens: TFDQuery;
+    ds_clientes: TDataSource;
+    ds_produtos: TDataSource;
+    ds_pedidos: TDataSource;
+    ds_pedidos_itens: TDataSource;
+    qry_estados: TFDQuery;
+    ds_estados: TDataSource;
+    qry_estadosCodigo: TFDAutoIncField;
+    qry_estadosDescricao: TStringField;
+    qry_estadosSigla: TStringField;
+    qry_clientesCodigo: TFDAutoIncField;
+    qry_clientesNome: TStringField;
+    qry_clientesCidade: TStringField;
+    qry_clientesUF: TStringField;
+    qry_produtosCodigo: TFDAutoIncField;
+    qry_produtosDescrição: TStringField;
+    qry_produtosVUnit: TBCDField;
+    qry_produtosEstoque: TBCDField;
+    qry_pedidos_itenscodigo: TFDAutoIncField;
+    qry_pedidos_itenscodigo_pedido: TIntegerField;
+    qry_pedidos_itensproduto: TIntegerField;
+    qry_pedidos_itensqtde: TBCDField;
+    qry_pedidos_itensvunit: TBCDField;
+    qry_pedidos_itensvtotal: TBCDField;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    qry_pedidoscodigo: TFDAutoIncField;
+    qry_pedidoscodigo_cliente: TIntegerField;
+    qry_pedidosnome_cliente: TStringField;
+    qry_pedidosqtde_itens: TBCDField;
+    qry_pedidosvtotal: TBCDField;
+    qry_pedidosxstatus: TStringField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+
+  end;
+
+var
+  dmPrincipal: TdmPrincipal;
+
+  TelaAberta, Acao : string;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

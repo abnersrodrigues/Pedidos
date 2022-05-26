@@ -1,0 +1,216 @@
+inherited frmProdutos: TfrmProdutos
+  Caption = 'Produtos'
+  PixelsPerInch = 96
+  TextHeight = 17
+  inherited pnl_centro: TPanel
+    ExplicitLeft = 0
+    ExplicitTop = 48
+    ExplicitWidth = 738
+    ExplicitHeight = 610
+    inherited pgcPrincipal: TPageControl
+      inherited tab_painel: TTabSheet
+        ExplicitTop = 31
+        ExplicitHeight = 488
+        inherited grd_painel: TDBGrid
+          DataSource = dmPrincipal.ds_produtos
+          OnTitleClick = grd_painelTitleClick
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'Codigo'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'Descri'#231#227'o'
+              Width = 350
+              Visible = True
+            end
+            item
+              Alignment = taCenter
+              Expanded = False
+              FieldName = 'VUnit'
+              Title.Alignment = taCenter
+              Title.Caption = 'Valor Unit'#225'rio'
+              Width = 100
+              Visible = True
+            end
+            item
+              Alignment = taCenter
+              Expanded = False
+              FieldName = 'Estoque'
+              Title.Alignment = taCenter
+              Width = 100
+              Visible = True
+            end>
+        end
+        inherited Panel2: TPanel
+          ExplicitLeft = 0
+          ExplicitWidth = 710
+          inherited grp_busca: TGroupBox
+            ExplicitWidth = 700
+            inherited Panel4: TPanel
+              ExplicitLeft = 12
+              ExplicitWidth = 686
+              inherited edt_busca: TEdit
+                OnKeyPress = edt_buscaKeyPress
+                ExplicitWidth = 666
+              end
+            end
+          end
+        end
+      end
+      inherited tab_dados: TTabSheet
+        ExplicitTop = 31
+        ExplicitHeight = 488
+        inherited GroupBox5: TGroupBox
+          Top = 183
+          Caption = 'Estoque Atual'
+          TabOrder = 3
+          object edt_est: TEdit
+            AlignWithMargins = True
+            Left = 12
+            Top = 24
+            Width = 576
+            Height = 23
+            Margins.Left = 10
+            Margins.Top = 5
+            Margins.Right = 10
+            Margins.Bottom = 5
+            Align = alClient
+            BorderStyle = bsNone
+            CharCase = ecUpperCase
+            Enabled = False
+            TabOrder = 0
+            OnExit = edt_estExit
+          end
+        end
+        object GroupBox1: TGroupBox
+          AlignWithMargins = True
+          Left = 10
+          Top = 123
+          Width = 600
+          Height = 54
+          Margins.Left = 10
+          Margins.Right = 100
+          Align = alTop
+          Caption = 'Valor Unit'#225'rio'
+          TabOrder = 2
+          ExplicitLeft = 18
+          ExplicitTop = 11
+          object edt_vunit: TEdit
+            AlignWithMargins = True
+            Left = 12
+            Top = 24
+            Width = 576
+            Height = 23
+            Margins.Left = 10
+            Margins.Top = 5
+            Margins.Right = 10
+            Margins.Bottom = 5
+            Align = alClient
+            BorderStyle = bsNone
+            CharCase = ecUpperCase
+            TabOrder = 0
+            OnExit = edt_vunitExit
+          end
+        end
+        object GroupBox2: TGroupBox
+          AlignWithMargins = True
+          Left = 10
+          Top = 63
+          Width = 600
+          Height = 54
+          Margins.Left = 10
+          Margins.Right = 100
+          Align = alTop
+          Caption = 'Descri'#231#227'o'
+          TabOrder = 1
+          ExplicitLeft = 18
+          ExplicitTop = 11
+          object edt_descricao: TEdit
+            AlignWithMargins = True
+            Left = 12
+            Top = 24
+            Width = 576
+            Height = 23
+            Margins.Left = 10
+            Margins.Top = 5
+            Margins.Right = 10
+            Margins.Bottom = 5
+            Align = alClient
+            BorderStyle = bsNone
+            CharCase = ecUpperCase
+            TabOrder = 0
+          end
+        end
+        object GroupBox3: TGroupBox
+          AlignWithMargins = True
+          Left = 10
+          Top = 3
+          Width = 600
+          Height = 54
+          Margins.Left = 10
+          Margins.Right = 100
+          Align = alTop
+          Caption = 'C'#243'digo'
+          TabOrder = 0
+          ExplicitLeft = 18
+          ExplicitTop = 11
+          object edt_codigo: TEdit
+            AlignWithMargins = True
+            Left = 12
+            Top = 24
+            Width = 576
+            Height = 23
+            Margins.Left = 10
+            Margins.Top = 5
+            Margins.Right = 10
+            Margins.Bottom = 5
+            Align = alClient
+            BorderStyle = bsNone
+            CharCase = ecUpperCase
+            Enabled = False
+            TabOrder = 0
+          end
+        end
+      end
+    end
+    inherited pnl_botoes: TPanel
+      ExplicitWidth = 738
+      inherited pnl_menu_top: TPanel
+        ExplicitLeft = 10
+        ExplicitWidth = 718
+        inherited pnl_alterar: TPanel
+          ExplicitLeft = 149
+        end
+        inherited pnl_novo: TPanel
+          ExplicitLeft = 22
+          ExplicitTop = 0
+        end
+        inherited Panel1: TPanel
+          ExplicitLeft = 530
+        end
+        inherited pnl_salvar: TPanel
+          ExplicitLeft = 403
+        end
+        inherited pnl_cancelar: TPanel
+          ExplicitLeft = 276
+        end
+      end
+    end
+  end
+  inherited pnl_topo: TPanel
+    ExplicitLeft = 0
+    ExplicitWidth = 738
+    inherited pnl_fechar: TPanel
+      ExplicitLeft = 678
+    end
+    inherited pnl_Titulo: TPanel
+      ExplicitWidth = 660
+    end
+    inherited pnl_barra_menu: TPanel
+      ExplicitWidth = 718
+    end
+  end
+end

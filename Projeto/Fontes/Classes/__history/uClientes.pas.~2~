@@ -1,0 +1,38 @@
+unit uClientes;
+
+interface
+
+uses FireDAC.Comp.Client, Data.DB;
+
+type
+    TClientes = class
+
+    private
+
+    fcodigo: integer;
+    fnome: String;
+    fcidade: String;
+    fuf: integer;
+
+    public
+
+    property codigo  : integer  read fcodigo  write fcodigo;
+    property nome    : String   read fnome    write fnome;
+    property cidade  : String   read fcidade  write fcidade;
+    property uf      : integer  read fuf      write fuf;
+
+    function BuscaCliente(codigo: string): TFDQuery;
+
+end;
+
+
+implementation
+
+{ TClientes }
+
+function TClientes.BuscaCliente(codigo: string): TFDQuery;
+begin
+
+end;
+
+end.

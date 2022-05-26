@@ -1,0 +1,22 @@
+INSERT INTO tab_produtos (descricao, valor, estoque)
+VALUES
+(upper('Escorredor de louça'), 23.98, 10),
+(upper('Saleiro'), 4.98, 12),
+(upper('Abridores de garrafa'), 7.99, 3),
+(upper('Batedor de carne'), 5.00, 5),
+(upper('Colheres de pau e medidora'), 19.80, 8),
+(upper('Concha'), 8.49, 10),
+(upper('Escumadeira'), 12.00, 4),
+(upper('Espátula'), 9.50, 6),
+(upper('Jarra medidora'), 24.90, 7),
+(upper('Jogo de talheres'), 49.50, 2),
+(upper('Luva térmica'), 4.99, 30),
+(upper('Ralador'), 17.40, 3),
+(upper('Tábuas'), 33.50, 4),
+(upper('Peneira'), 1.99, 50),
+(upper('Cortador de pizza'), 17.80, 8),
+(upper('Porta- condimentos'), 17.80, 7),
+(upper('Rolo de abrir massa'), 42.99, 5),
+(upper('Tesoura trinchante de frango'), 28.49, 3),
+(upper('Descansos de panela'), 1.99, 112),
+(upper('Funil'), 1.99, 100);

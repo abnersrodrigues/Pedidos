@@ -1,0 +1,21 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 450
+  Width = 300
+  object CONEXAO: TFDConnection
+    Params.Strings = (
+      'Database=WF'
+      'User_Name=root'
+      'Password=Abner@2022'
+      'Server=localhost'
+      'DriverID=MySQL')
+    LoginPrompt = False
+    Left = 88
+    Top = 72
+  end
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    VendorLib = 'C:\Users\MAC\Desktop\Teste WK Technology\Dll\libmysql.dll'
+    Left = 80
+    Top = 184
+  end
+end

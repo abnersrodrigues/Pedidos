@@ -1,0 +1,65 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 450
+  Width = 714
+  object CONEXAO: TFDConnection
+    Params.Strings = (
+      'Database=WF'
+      'User_Name=root'
+      'Password=Abner@2022'
+      'Server=localhost'
+      'DriverID=MySQL')
+    LoginPrompt = False
+    Left = 88
+    Top = 32
+  end
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    VendorLib = 'C:\Users\MAC\Desktop\Teste WK Technology\Dll\libmysql.dll'
+    Left = 80
+    Top = 368
+  end
+  object qry_clientes: TFDQuery
+    Connection = CONEXAO
+    Left = 312
+    Top = 32
+  end
+  object qry_produtos: TFDQuery
+    Connection = CONEXAO
+    Left = 312
+    Top = 96
+  end
+  object qry_pedidos: TFDQuery
+    Connection = CONEXAO
+    Left = 312
+    Top = 168
+  end
+  object qry_pedidos_itens: TFDQuery
+    Connection = CONEXAO
+    Left = 312
+    Top = 240
+  end
+  object ds_clientes: TDataSource
+    AutoEdit = False
+    DataSet = qry_clientes
+    Left = 376
+    Top = 32
+  end
+  object ds_produtos: TDataSource
+    AutoEdit = False
+    DataSet = qry_produtos
+    Left = 384
+    Top = 96
+  end
+  object ds_pedidos: TDataSource
+    AutoEdit = False
+    DataSet = qry_pedidos
+    Left = 384
+    Top = 168
+  end
+  object ds_pedidos_itens: TDataSource
+    AutoEdit = False
+    DataSet = qry_pedidos_itens
+    Left = 392
+    Top = 240
+  end
+end
