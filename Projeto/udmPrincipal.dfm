@@ -9,13 +9,14 @@
       'Password=Abner@2022'
       'Server=localhost'
       'DriverID=MySQL')
-    Connected = True
     LoginPrompt = False
     Left = 88
     Top = 32
   end
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
-    VendorLib = 'C:\Users\MAC\Desktop\Teste WK Technology\Dll\libmysql.dll'
+    VendorLib = 
+      'C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Dll\libmysql.dl' +
+      'l'
     Left = 80
     Top = 368
   end
