@@ -1,0 +1,16 @@
+Script
+wf_populado (BD ja com insert)
+
+
+Se desejar criar zerado rodar na seguencia
+1- wf (estrutura)
+2- tabela de estados (populando);
+3- tabela de clientes (populando);
+4- tablea de produtos (populando)
+
+
+
+============== Atualização do dia 28/05/2020 ==============
+1) Inclusão tela de Inventário
+2) Ajuste na Trigger Atualização de Estoque
+3) Ajuste na Tela Itens dos Pedidos (colunas)

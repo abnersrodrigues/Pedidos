@@ -5,7 +5,7 @@ object frmItens: TfrmItens
   BorderStyle = bsNone
   Caption = 'ITENS'
   ClientHeight = 398
-  ClientWidth = 531
+  ClientWidth = 666
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -21,7 +21,7 @@ object frmItens: TfrmItens
     AlignWithMargins = True
     Left = 10
     Top = 58
-    Width = 511
+    Width = 646
     Height = 330
     Margins.Left = 10
     Margins.Top = 0
@@ -32,11 +32,12 @@ object frmItens: TfrmItens
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 511
     object DBGrid1: TDBGrid
       AlignWithMargins = True
       Left = 20
       Top = 20
-      Width = 471
+      Width = 606
       Height = 290
       Margins.Left = 20
       Margins.Top = 20
@@ -57,8 +58,8 @@ object frmItens: TfrmItens
           FieldName = 'codigo'
           Title.Alignment = taCenter
           Title.Caption = 'C'#243'digo'
-          Width = 100
-          Visible = True
+          Width = -1
+          Visible = False
         end
         item
           Expanded = False
@@ -70,12 +71,15 @@ object frmItens: TfrmItens
           Expanded = False
           FieldName = 'produto'
           ReadOnly = True
-          Visible = False
+          Title.Caption = 'C'#243'digo'
+          Visible = True
         end
         item
           Expanded = False
           FieldName = 'descricao'
-          Visible = False
+          Title.Caption = 'Descri'#231#227'o Produto'
+          Width = 200
+          Visible = True
         end
         item
           Alignment = taCenter
@@ -117,7 +121,7 @@ object frmItens: TfrmItens
     AlignWithMargins = True
     Left = 10
     Top = 10
-    Width = 511
+    Width = 646
     Height = 48
     Margins.Left = 10
     Margins.Top = 10
@@ -128,9 +132,10 @@ object frmItens: TfrmItens
     Color = clWhite
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 511
     object pnl_fechar: TPanel
       AlignWithMargins = True
-      Left = 451
+      Left = 586
       Top = 5
       Width = 50
       Height = 37
@@ -143,6 +148,7 @@ object frmItens: TfrmItens
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
+      ExplicitLeft = 451
       object btn_fechar: TSpeedButton
         AlignWithMargins = True
         Left = 0
@@ -194,7 +200,7 @@ object frmItens: TfrmItens
       AlignWithMargins = True
       Left = 10
       Top = 3
-      Width = 433
+      Width = 568
       Height = 41
       Margins.Left = 10
       Align = alClient
@@ -202,6 +208,7 @@ object frmItens: TfrmItens
       Color = clWhite
       ParentBackground = False
       TabOrder = 1
+      ExplicitWidth = 433
       object lbl_titulo_1: TLabel
         AlignWithMargins = True
         Left = 3
@@ -242,7 +249,7 @@ object frmItens: TfrmItens
       AlignWithMargins = True
       Left = 10
       Top = 47
-      Width = 491
+      Width = 626
       Height = 1
       Margins.Left = 10
       Margins.Top = 0
@@ -253,6 +260,7 @@ object frmItens: TfrmItens
       Color = 14408667
       ParentBackground = False
       TabOrder = 2
+      ExplicitWidth = 491
     end
   end
 end

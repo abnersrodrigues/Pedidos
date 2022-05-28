@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQL,
   FireDAC.Phys.MySQLDef, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
-  FireDAC.Comp.DataSet, FireDAC.Comp.UI;
+  FireDAC.Comp.DataSet, FireDAC.Comp.UI, uPedido;
 
 type
   TdmPrincipal = class(TDataModule)
@@ -50,6 +50,16 @@ type
     qry_pedidos_itensvunit: TBCDField;
     qry_pedidos_itensvtotal: TBCDField;
     vlr_item: TFloatField;
+    qry_inventarios: TFDQuery;
+    ds_estoque: TDataSource;
+    qry_inventariosCodigo: TFDAutoIncField;
+    qry_inventariosCodigo_Produto: TIntegerField;
+    qry_inventariosDescricaoProduto: TStringField;
+    qry_inventariosQtde_Anterior: TFloatField;
+    qry_inventariosQtde_Atual: TFloatField;
+    qry_inventariosTipo_Lancamento: TStringField;
+    qry_inventariosData_Lancamento: TSQLTimeStampField;
+    qry_inventariosDescricao_Lancamento: TStringField;
     procedure qry_pedidos_itensCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
@@ -71,6 +81,7 @@ implementation
 
 procedure TdmPrincipal.qry_pedidos_itensCalcFields(DataSet: TDataSet);
 Var qryBusca : TFDQuery;
+    uPedido : TPedido;
 begin
   With DataSet do
   begin
@@ -92,6 +103,10 @@ begin
             Params.ParamByName('vTotal').AsFloat := qry_pedidos_itens.FieldByName('vlr_item').asFloat;
           ExecSQL;
         End;
+
+      uPedido := TPedido.Create;
+      uPedido.AtualizarPedido(qry_pedidoscodigo.Value);
+      uPedido.Free;
 
       qryBusca.Free;
     Except

@@ -1,0 +1,394 @@
+inherited frmEstoque: TfrmEstoque
+  Margins.Bottom = 10
+  Caption = 'Controle Estoque'
+  ClientWidth = 912
+  ExplicitWidth = 912
+  PixelsPerInch = 96
+  TextHeight = 17
+  inherited pnl_centro: TPanel
+    Width = 912
+    ExplicitWidth = 912
+    inherited pgcPrincipal: TPageControl
+      Width = 892
+      ActivePage = tab_painel
+      ExplicitWidth = 892
+      inherited tab_painel: TTabSheet
+        ExplicitWidth = 884
+        inherited grd_painel: TDBGrid
+          Width = 874
+          DataSource = dmPrincipal.ds_estoque
+          OnDblClick = grd_painelDblClick
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'Codigo'
+              Title.Caption = 'C'#243'digo'
+              Width = 80
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'Codigo_Produto'
+              Visible = False
+            end
+            item
+              Expanded = False
+              FieldName = 'DescricaoProduto'
+              Title.Caption = 'Descri'#231#227'o Produto'
+              Width = 200
+              Visible = True
+            end
+            item
+              Alignment = taCenter
+              Expanded = False
+              FieldName = 'Qtde_Anterior'
+              Title.Alignment = taCenter
+              Title.Caption = 'Qtde Anterior'
+              Width = 100
+              Visible = True
+            end
+            item
+              Alignment = taCenter
+              Expanded = False
+              FieldName = 'Qtde_Atual'
+              Title.Alignment = taCenter
+              Title.Caption = 'Qtde Atual'
+              Width = 100
+              Visible = True
+            end
+            item
+              Alignment = taCenter
+              Expanded = False
+              FieldName = 'Tipo_Lancamento'
+              Title.Alignment = taCenter
+              Title.Caption = 'Tipo'
+              Width = 50
+              Visible = True
+            end
+            item
+              Alignment = taCenter
+              Expanded = False
+              FieldName = 'Data_Lancamento'
+              Title.Alignment = taCenter
+              Title.Caption = 'Data Lan'#231'amento'
+              Width = 130
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'Descricao_Lancamento'
+              Width = -1
+              Visible = False
+            end>
+        end
+        inherited Panel2: TPanel
+          Width = 884
+          ExplicitWidth = 884
+          inherited grp_busca: TGroupBox
+            Width = 874
+            ExplicitWidth = 874
+            inherited Panel4: TPanel
+              Width = 860
+              ExplicitWidth = 860
+              inherited edt_busca: TEdit
+                Width = 840
+                OnKeyPress = edt_buscaKeyPress
+                ExplicitWidth = 840
+              end
+            end
+          end
+        end
+      end
+      inherited tab_dados: TTabSheet
+        ExplicitWidth = 884
+        object ScrollBox: TScrollBox [0]
+          Left = 0
+          Top = 60
+          Width = 884
+          Height = 443
+          Align = alClient
+          BorderStyle = bsNone
+          TabOrder = 0
+          ExplicitTop = 0
+          object grp_cod_produto: TGroupBox
+            AlignWithMargins = True
+            Left = 10
+            Top = 3
+            Width = 774
+            Height = 54
+            Margins.Left = 10
+            Margins.Right = 100
+            Align = alTop
+            Caption = 'C'#243'digo Produto'
+            TabOrder = 0
+            ExplicitTop = 63
+            ExplicitWidth = 757
+            object edt_cod_produto: TEdit
+              AlignWithMargins = True
+              Left = 12
+              Top = 24
+              Width = 750
+              Height = 23
+              Margins.Left = 10
+              Margins.Top = 5
+              Margins.Right = 10
+              Margins.Bottom = 5
+              Align = alClient
+              BorderStyle = bsNone
+              TabOrder = 0
+              ExplicitWidth = 733
+            end
+          end
+          object grp_descricao_produto: TGroupBox
+            AlignWithMargins = True
+            Left = 10
+            Top = 63
+            Width = 774
+            Height = 54
+            Margins.Left = 10
+            Margins.Right = 100
+            Align = alTop
+            Caption = 'Decri'#231#227'o Produto'
+            TabOrder = 1
+            ExplicitTop = 123
+            ExplicitWidth = 757
+            object edt_descricao_produto: TEdit
+              AlignWithMargins = True
+              Left = 12
+              Top = 24
+              Width = 750
+              Height = 23
+              Margins.Left = 10
+              Margins.Top = 5
+              Margins.Right = 10
+              Margins.Bottom = 5
+              Align = alClient
+              BorderStyle = bsNone
+              TabOrder = 0
+              ExplicitWidth = 733
+            end
+          end
+          object grp_qtde_anterior: TGroupBox
+            AlignWithMargins = True
+            Left = 10
+            Top = 183
+            Width = 774
+            Height = 54
+            Margins.Left = 10
+            Margins.Right = 100
+            Align = alTop
+            Caption = 'Qtde Anterior'
+            TabOrder = 2
+            ExplicitTop = 243
+            ExplicitWidth = 757
+            object edt_qtde_anterior: TEdit
+              AlignWithMargins = True
+              Left = 12
+              Top = 24
+              Width = 750
+              Height = 23
+              Margins.Left = 10
+              Margins.Top = 5
+              Margins.Right = 10
+              Margins.Bottom = 5
+              Align = alClient
+              BorderStyle = bsNone
+              TabOrder = 0
+              ExplicitWidth = 733
+            end
+          end
+          object grp_qtde_atual: TGroupBox
+            AlignWithMargins = True
+            Left = 10
+            Top = 123
+            Width = 774
+            Height = 54
+            Margins.Left = 10
+            Margins.Right = 100
+            Align = alTop
+            Caption = 'Qtde Atual'
+            TabOrder = 3
+            ExplicitTop = 183
+            ExplicitWidth = 757
+            object edt_qtde_atual: TEdit
+              AlignWithMargins = True
+              Left = 12
+              Top = 24
+              Width = 750
+              Height = 23
+              Margins.Left = 10
+              Margins.Top = 5
+              Margins.Right = 10
+              Margins.Bottom = 5
+              Align = alClient
+              BorderStyle = bsNone
+              TabOrder = 0
+              ExplicitWidth = 733
+            end
+          end
+          object grp_tipo_lancamento: TGroupBox
+            AlignWithMargins = True
+            Left = 10
+            Top = 243
+            Width = 774
+            Height = 54
+            Margins.Left = 10
+            Margins.Right = 100
+            Align = alTop
+            Caption = 'Tipo de Lan'#231'amento'
+            TabOrder = 4
+            ExplicitTop = 303
+            ExplicitWidth = 757
+            object cmb_tipo_lancamento: TComboBox
+              AlignWithMargins = True
+              Left = 12
+              Top = 24
+              Width = 750
+              Height = 25
+              Margins.Left = 10
+              Margins.Top = 5
+              Margins.Right = 10
+              Margins.Bottom = 5
+              Align = alClient
+              Style = csDropDownList
+              ItemIndex = 0
+              TabOrder = 0
+              Text = 'ENTRADA'
+              Items.Strings = (
+                'ENTRADA'
+                'SAIDA')
+              ExplicitWidth = 733
+            end
+          end
+          object grp_desc_lancamento: TGroupBox
+            AlignWithMargins = True
+            Left = 10
+            Top = 303
+            Width = 774
+            Height = 54
+            Margins.Left = 10
+            Margins.Right = 100
+            Align = alTop
+            Caption = 'Descri'#231#227'o do Lan'#231'amento'
+            TabOrder = 5
+            ExplicitTop = 363
+            ExplicitWidth = 757
+            object edt_descricao_lancamento: TEdit
+              AlignWithMargins = True
+              Left = 12
+              Top = 24
+              Width = 750
+              Height = 23
+              Margins.Left = 10
+              Margins.Top = 5
+              Margins.Right = 10
+              Margins.Bottom = 5
+              Align = alClient
+              BorderStyle = bsNone
+              TabOrder = 0
+              ExplicitWidth = 733
+            end
+          end
+          object grp_data_lancamento: TGroupBox
+            AlignWithMargins = True
+            Left = 10
+            Top = 363
+            Width = 774
+            Height = 54
+            Margins.Left = 10
+            Margins.Right = 100
+            Align = alTop
+            Caption = 'Data Lan'#231'amento'
+            TabOrder = 6
+            ExplicitTop = 423
+            ExplicitWidth = 757
+            object edt_data_lancamento: TEdit
+              AlignWithMargins = True
+              Left = 12
+              Top = 24
+              Width = 750
+              Height = 23
+              Margins.Left = 10
+              Margins.Top = 5
+              Margins.Right = 10
+              Margins.Bottom = 5
+              Align = alClient
+              BorderStyle = bsNone
+              TabOrder = 0
+              ExplicitWidth = 733
+            end
+          end
+        end
+        inherited grp_codigo: TGroupBox
+          Width = 774
+          Caption = 'C'#243'digo Lan'#231'amento'
+          TabOrder = 1
+          Visible = False
+          ExplicitWidth = 774
+          object edt_cod_lancamento: TEdit
+            AlignWithMargins = True
+            Left = 12
+            Top = 24
+            Width = 750
+            Height = 23
+            Margins.Left = 10
+            Margins.Top = 5
+            Margins.Right = 10
+            Margins.Bottom = 5
+            Align = alClient
+            BorderStyle = bsNone
+            TabOrder = 0
+          end
+        end
+      end
+    end
+    inherited pnl_botoes: TPanel
+      Width = 912
+      ExplicitWidth = 912
+      inherited pnl_menu_top: TPanel
+        Width = 892
+        ExplicitWidth = 892
+        inherited pnl_alterar: TPanel
+          inherited btn_alterar: TSpeedButton
+            ExplicitLeft = 5
+            ExplicitTop = -1
+            ExplicitHeight = 49
+          end
+        end
+        inherited Panel1: TPanel [1]
+          TabOrder = 1
+        end
+        inherited pnl_salvar: TPanel [2]
+          TabOrder = 2
+        end
+        inherited pnl_cancelar: TPanel [3]
+          TabOrder = 3
+        end
+        inherited pnl_barra_botoes: TPanel [4]
+          Width = 892
+          TabOrder = 4
+          ExplicitWidth = 892
+        end
+        inherited pnl_novo: TPanel [5]
+          TabOrder = 5
+        end
+      end
+    end
+  end
+  inherited pnl_topo: TPanel
+    Width = 912
+    ExplicitWidth = 912
+    inherited pnl_fechar: TPanel
+      Left = 852
+      ExplicitLeft = 852
+    end
+    inherited pnl_Titulo: TPanel
+      Width = 834
+      ExplicitWidth = 834
+    end
+    inherited pnl_barra_menu: TPanel
+      Width = 892
+      ExplicitWidth = 892
+    end
+  end
+end

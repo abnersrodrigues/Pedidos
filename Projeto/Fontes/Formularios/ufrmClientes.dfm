@@ -5,10 +5,6 @@ inherited frmClientes: TfrmClientes
   inherited pnl_centro: TPanel
     inherited pgcPrincipal: TPageControl
       inherited tab_painel: TTabSheet
-        ExplicitLeft = 4
-        ExplicitTop = 31
-        ExplicitWidth = 710
-        ExplicitHeight = 503
         inherited grd_painel: TDBGrid
           DataSource = dmPrincipal.ds_clientes
           OnTitleClick = grd_painelTitleClick
@@ -49,11 +45,7 @@ inherited frmClientes: TfrmClientes
         end
       end
       inherited tab_dados: TTabSheet
-        ExplicitLeft = 4
-        ExplicitTop = 31
-        ExplicitWidth = 710
-        ExplicitHeight = 503
-        inherited GroupBox5: TGroupBox
+        inherited grp_codigo: TGroupBox
           Top = 183
           Caption = 'UF'
           TabOrder = 3
@@ -166,43 +158,11 @@ inherited frmClientes: TfrmClientes
         end
       end
     end
-    inherited pnl_botoes: TPanel
-      inherited pnl_menu_top: TPanel
-        inherited pnl_alterar: TPanel
-          ExplicitHeight = 49
-        end
-        inherited pnl_novo: TPanel
-          ExplicitHeight = 49
-        end
-        inherited Panel1: TPanel
-          ExplicitHeight = 49
-        end
-        inherited pnl_salvar: TPanel
-          ExplicitHeight = 49
-        end
-        inherited pnl_cancelar: TPanel
-          ExplicitHeight = 49
-        end
-        inherited pnl_barra_botoes: TPanel
-          ExplicitLeft = 0
-          ExplicitTop = 49
-          ExplicitWidth = 718
-        end
-      end
-    end
   end
   inherited pnl_topo: TPanel
     inherited pnl_fechar: TPanel
       inherited btn_fechar: TSpeedButton
         Transparent = False
-      end
-    end
-    inherited pnl_Titulo: TPanel
-      inherited lbl_titulo_1: TLabel
-        Height = 35
-      end
-      inherited lbl_titulo_2: TLabel
-        Height = 35
       end
     end
   end

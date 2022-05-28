@@ -299,7 +299,8 @@ begin
 
 
         SQL.Add('UPDATE tab_pedido p');
-        SQL.Add('SET p.Qtde_Itens = (SELECT COUNT(PI.codigo_pedido) FROM tab_pedido_itens pi WHERE PI.codigo_pedido = p.Codigo)');
+        SQL.Add('SET p.Qtde_Itens = (SELECT COUNT(PI.codigo_pedido) FROM tab_pedido_itens pi WHERE PI.codigo_pedido = p.Codigo),');
+        SQL.Add('p.VTotal = 	(SELECT sum(PI.VTotal) FROM tab_pedido_itens PI WHERE PI.codigo_pedido = p.Codigo)');
         SQL.Add('WHERE p.Codigo = :codigo');
           Params.ParamByName('codigo').AsInteger := codigo;
         ExecSQL;

@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls, uFuncoes;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls, uFuncoes,
+  Vcl.Menus, Vcl.Imaging.pngimage;
 
 type
   TfrmPrincipal = class(TForm)
@@ -23,9 +24,9 @@ type
     pnl_principal: TPanel;
     pnl_botoes: TPanel;
     pnl_menu_top: TPanel;
-    pnl_conexao: TPanel;
+    pnl_clientes: TPanel;
     btn_clientes: TSpeedButton;
-    pnl_verifica: TPanel;
+    pnl_produtos: TPanel;
     btn_produtos: TSpeedButton;
     Panel1: TPanel;
     pnl_barra_botao: TPanel;
@@ -39,6 +40,8 @@ type
     pnl_data: TPanel;
     lbl_data: TLabel;
     Image1: TImage;
+    pnl_registro_estoque: TPanel;
+    btn_inventarios: TSpeedButton;
     procedure btn_clientesMouseEnter(Sender: TObject);
     procedure btn_clientesMouseLeave(Sender: TObject);
     procedure btn_fecharClick(Sender: TObject);
@@ -46,6 +49,7 @@ type
     procedure btn_clientesClick(Sender: TObject);
     procedure btn_produtosClick(Sender: TObject);
     procedure btn_pedidoClick(Sender: TObject);
+    procedure btn_inventariosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -62,7 +66,8 @@ implementation
 
 {$R *.dfm}
 
-uses ufrmClientes, udmPrincipal, ufrmProdutos, ufrmPedido, ufrmMovimentacao;
+uses ufrmClientes, udmPrincipal, ufrmProdutos, ufrmPedido, ufrmMovimentacao,
+  ufrmInventarios;
 
 procedure TfrmPrincipal.btn_clientesClick(Sender: TObject);
 begin
@@ -82,6 +87,14 @@ procedure TfrmPrincipal.btn_clientesMouseLeave(Sender: TObject);
 begin
   focar_botao( Self, pnl_barra_botao, ( TComponent ( Sender ) as TspeedButton ),
                false, 'MENU' );
+end;
+
+procedure TfrmPrincipal.btn_inventariosClick(Sender: TObject);
+begin
+  frmInventarios          := TfrmInventarios.Create( frmPrincipal );
+  frmInventarios.Parent   := pnl_principal.Parent;
+  TelaAberta              := frmInventarios.Caption;
+  frmInventarios.Show;
 end;
 
 procedure TfrmPrincipal.btn_fecharClick(Sender: TObject);

@@ -29,7 +29,7 @@ type
     img_mais: TImage;
     GroupBox5: TGroupBox;
     lbl_pedido: TLabel;
-    Image1: TImage;
+    img_busca_produto: TImage;
     Panel6: TPanel;
     Panel4: TPanel;
     GroupBox1: TGroupBox;
@@ -86,6 +86,7 @@ type
     procedure grd_painelKeyPress(Sender: TObject; var Key: Char);
     procedure grd_painelKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
+    procedure img_busca_produtoClick(Sender: TObject);
 
   private
     function VerificaAcao(sAcao: String): Boolean;
@@ -123,6 +124,10 @@ procedure TfrmPedido.btn_fecharClick(Sender: TObject);
 begin
   TelaAberta := '';
   qry_temp.Close;
+
+  dmPrincipal.qry_pedidos.Refresh;
+  dmPrincipal.qry_pedidos.First;
+
   Self.Close;
 end;
 
@@ -149,6 +154,12 @@ procedure TfrmPedido.edt_produtoKeyPress(Sender: TObject; var Key: Char);
 begin
   if key = #13 then
     Begin
+      if edt_produto.Text = '' then
+        Begin
+          ShowMessage('Sem produto para busca');
+          Exit;
+        End;
+
       if not uProdutos.BuscaProduto(strtoint(edt_produto.Text)) then
         Begin
           ShowMessage('Erro: produto não encontrado');
@@ -158,6 +169,11 @@ begin
         End
       else
         Begin
+          if (uProdutos.estoque-strtofloat(edt_qtde.Text)) < 0 then
+            ShowMessage('Isso te deixará com estoque negativo em :'+FloattoStr(uProdutos.estoque-strtofloat(edt_qtde.Text)));
+
+
+
 
           qry_temp.Insert;
 
@@ -239,6 +255,11 @@ procedure TfrmPedido.grd_painelKeyPress(Sender: TObject; var Key: Char);
 begin
   if key = #13 then AtualizaStatusBar;
 
+end;
+
+procedure TfrmPedido.img_busca_produtoClick(Sender: TObject);
+begin
+  ShowMessage('Em construção: Tela de busca produto');
 end;
 
 procedure TfrmPedido.img_maisClick(Sender: TObject);

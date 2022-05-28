@@ -4,6 +4,7 @@ object frmHeranca: TfrmHeranca
   Top = 0
   Margins.Left = 10
   Margins.Right = 10
+  Margins.Bottom = 10
   Align = alClient
   BorderIcons = [biSystemMenu]
   BorderStyle = bsNone
@@ -42,7 +43,7 @@ object frmHeranca: TfrmHeranca
       Margins.Top = 5
       Margins.Right = 10
       Margins.Bottom = 10
-      ActivePage = tab_dados
+      ActivePage = tab_painel
       Align = alClient
       Style = tsButtons
       TabOrder = 0
@@ -131,7 +132,7 @@ object frmHeranca: TfrmHeranca
       object tab_dados: TTabSheet
         Caption = 'Dados'
         ImageIndex = 1
-        object GroupBox5: TGroupBox
+        object grp_codigo: TGroupBox
           AlignWithMargins = True
           Left = 10
           Top = 3
@@ -185,7 +186,6 @@ object frmHeranca: TfrmHeranca
           Color = clWhite
           ParentBackground = False
           TabOrder = 0
-          ExplicitHeight = 50
           object btn_alterar: TSpeedButton
             AlignWithMargins = True
             Left = 0
@@ -229,7 +229,6 @@ object frmHeranca: TfrmHeranca
           Color = clWhite
           ParentBackground = False
           TabOrder = 1
-          ExplicitHeight = 50
           object btn_novo: TSpeedButton
             AlignWithMargins = True
             Left = 0
@@ -273,7 +272,6 @@ object frmHeranca: TfrmHeranca
           Color = clWhite
           ParentBackground = False
           TabOrder = 2
-          ExplicitHeight = 50
         end
         object pnl_salvar: TPanel
           AlignWithMargins = True
@@ -290,7 +288,6 @@ object frmHeranca: TfrmHeranca
           Color = clWhite
           ParentBackground = False
           TabOrder = 3
-          ExplicitHeight = 50
           object btn_salvar: TSpeedButton
             AlignWithMargins = True
             Left = 0
@@ -335,7 +332,6 @@ object frmHeranca: TfrmHeranca
           Color = clWhite
           ParentBackground = False
           TabOrder = 4
-          ExplicitHeight = 50
           object btn_cancelar: TSpeedButton
             AlignWithMargins = True
             Left = 0
@@ -379,9 +375,6 @@ object frmHeranca: TfrmHeranca
           Color = 14408667
           ParentBackground = False
           TabOrder = 5
-          ExplicitLeft = 10
-          ExplicitTop = 47
-          ExplicitWidth = 727
         end
       end
       object pnl_barra_botao: TPanel

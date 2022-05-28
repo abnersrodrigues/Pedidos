@@ -7,7 +7,6 @@ inherited frmProdutos: TfrmProdutos
       ActivePage = tab_painel
       inherited tab_painel: TTabSheet
         inherited grd_painel: TDBGrid
-          Height = 425
           DataSource = dmPrincipal.ds_produtos
           OnTitleClick = grd_painelTitleClick
           Columns = <
@@ -51,7 +50,11 @@ inherited frmProdutos: TfrmProdutos
         end
       end
       inherited tab_dados: TTabSheet
-        inherited GroupBox5: TGroupBox
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
+        inherited grp_codigo: TGroupBox
           Top = 183
           Caption = 'Estoque Atual'
           TabOrder = 3

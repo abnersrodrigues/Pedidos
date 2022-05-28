@@ -7,7 +7,7 @@ object frmPrincipal: TfrmPrincipal
   BorderIcons = [biSystemMenu]
   BorderStyle = bsNone
   Caption = 'WK Technology'
-  ClientHeight = 682
+  ClientHeight = 702
   ClientWidth = 884
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -24,12 +24,13 @@ object frmPrincipal: TfrmPrincipal
     Left = 0
     Top = 0
     Width = 884
-    Height = 682
+    Height = 702
     Align = alClient
     BevelOuter = bvNone
     Color = clSilver
     ParentBackground = False
     TabOrder = 0
+    ExplicitHeight = 682
     object pnl_topo: TPanel
       AlignWithMargins = True
       Left = 10
@@ -6793,7 +6794,7 @@ object frmPrincipal: TfrmPrincipal
       Left = 10
       Top = 58
       Width = 864
-      Height = 614
+      Height = 634
       Margins.Left = 10
       Margins.Top = 0
       Margins.Right = 10
@@ -6803,6 +6804,7 @@ object frmPrincipal: TfrmPrincipal
       Color = clWhite
       ParentBackground = False
       TabOrder = 1
+      ExplicitTop = 57
       object pnl_botoes: TPanel
         Left = 0
         Top = 0
@@ -6828,7 +6830,7 @@ object frmPrincipal: TfrmPrincipal
           Color = clWhite
           ParentBackground = False
           TabOrder = 0
-          object pnl_conexao: TPanel
+          object pnl_clientes: TPanel
             AlignWithMargins = True
             Left = 22
             Top = 0
@@ -6871,7 +6873,7 @@ object frmPrincipal: TfrmPrincipal
               ExplicitHeight = 44
             end
           end
-          object pnl_verifica: TPanel
+          object pnl_produtos: TPanel
             AlignWithMargins = True
             Left = 149
             Top = 0
@@ -6916,7 +6918,7 @@ object frmPrincipal: TfrmPrincipal
           end
           object Panel1: TPanel
             AlignWithMargins = True
-            Left = 403
+            Left = 530
             Top = 0
             Width = 100
             Height = 50
@@ -6973,6 +6975,49 @@ object frmPrincipal: TfrmPrincipal
               ExplicitHeight = 44
             end
           end
+          object pnl_registro_estoque: TPanel
+            AlignWithMargins = True
+            Left = 403
+            Top = 0
+            Width = 100
+            Height = 50
+            Margins.Left = 22
+            Margins.Top = 0
+            Margins.Right = 5
+            Margins.Bottom = 0
+            Align = alLeft
+            BevelOuter = bvNone
+            Color = clWhite
+            ParentBackground = False
+            TabOrder = 4
+            object btn_inventarios: TSpeedButton
+              Tag = 2
+              AlignWithMargins = True
+              Left = 0
+              Top = 0
+              Width = 100
+              Height = 50
+              Cursor = crHandPoint
+              Margins.Left = 0
+              Margins.Top = 0
+              Margins.Right = 0
+              Margins.Bottom = 0
+              Align = alClient
+              Caption = 'INVENT'#193'RIOS'
+              Flat = True
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clGray
+              Font.Height = -11
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              OnClick = btn_inventariosClick
+              OnMouseEnter = btn_clientesMouseEnter
+              OnMouseLeave = btn_clientesMouseLeave
+              ExplicitLeft = 1
+              ExplicitHeight = 44
+            end
+          end
         end
         object pnl_barra_botao: TPanel
           Left = 56
@@ -6987,7 +7032,7 @@ object frmPrincipal: TfrmPrincipal
       end
       object pnl_status_bar: TPanel
         Left = 0
-        Top = 566
+        Top = 586
         Width = 864
         Height = 48
         Align = alBottom
@@ -6995,6 +7040,7 @@ object frmPrincipal: TfrmPrincipal
         Color = clWhite
         ParentBackground = False
         TabOrder = 1
+        ExplicitTop = 566
         object pnl_computador: TPanel
           AlignWithMargins = True
           Left = 600

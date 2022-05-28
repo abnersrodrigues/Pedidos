@@ -1,0 +1,85 @@
+unit ufrmEstoque;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, ufrmHeranca, Data.DB, Vcl.StdCtrls,
+  Vcl.Buttons, Vcl.Grids, Vcl.DBGrids, Vcl.ComCtrls, Vcl.ExtCtrls, uProduto;
+
+type
+  TfrmEstoque = class(TfrmHeranca)
+    grp_tipo_lancamento: TGroupBox;
+    grp_qtde_atual: TGroupBox;
+    grp_qtde_anterior: TGroupBox;
+    grp_cod_lancamento: TGroupBox;
+    grp_data_lancamento: TGroupBox;
+    grp_descricao_produto: TGroupBox;
+    grp_cod_produto: TGroupBox;
+    edt_cod_lancamento: TEdit;
+    edt_cod_produto: TEdit;
+    edt_descricao_produto: TEdit;
+    edt_qtde_anterior: TEdit;
+    edt_qtde_atual: TEdit;
+    edt_data_lancamento: TEdit;
+    edt_descricao_lancamento: TEdit;
+    cmb_tipo_lancamento: TComboBox;
+    procedure FormShow(Sender: TObject);
+    procedure btn_alterarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+
+    uProduto : TProduto;
+
+  end;
+
+var
+  frmEstoque: TfrmEstoque;
+
+implementation
+
+{$R *.dfm}
+
+uses udmPrincipal;
+
+procedure TfrmEstoque.btn_alterarClick(Sender: TObject);
+begin
+  inherited;
+
+  uProduto.BuscaEstoque
+
+end;
+
+procedure TfrmEstoque.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  inherited;
+
+  uProduto.free;
+end;
+
+procedure TfrmEstoque.FormCreate(Sender: TObject);
+begin
+  inherited;
+
+  uProduto := TProduto.Create;
+end;
+
+procedure TfrmEstoque.FormShow(Sender: TObject);
+begin
+  inherited;
+
+  grd_painel.DataSource   := dmPrincipal.ds_estoque;
+
+  with dmPrincipal.qry_estoque do
+    Begin
+      Close;
+      Params.ParamByName('DESCRICAO').AsString :=  '%' + edt_busca.Text + '%';
+      Open;
+    End;
+end;
+
+end.

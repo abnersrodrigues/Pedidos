@@ -13,7 +13,8 @@ uses
   ufrmPedido in 'Fontes\Formularios\ufrmPedido.pas' {frmPedido},
   uPedido in 'Fontes\Classes\uPedido.pas',
   ufrmMovimentacao in 'Fontes\Formularios\ufrmMovimentacao.pas' {frmMovimentacao},
-  ufrmMovimentacaoItem in 'Fontes\Formularios\ufrmMovimentacaoItem.pas' {frmItens};
+  ufrmMovimentacaoItem in 'Fontes\Formularios\ufrmMovimentacaoItem.pas' {frmItens},
+  ufrmInventarios in 'Fontes\Formularios\ufrmInventarios.pas' {frmInventarios};
 
 {$R *.res}
 
@@ -24,5 +25,6 @@ begin
   Application.CreateForm(TdmPrincipal, dmPrincipal);
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TfrmHeranca, frmHeranca);
+  Application.CreateForm(TfrmInventarios, frmInventarios);
   Application.Run;
 end.

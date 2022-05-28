@@ -14,7 +14,7 @@ type
     pgcPrincipal: TPageControl;
     tab_painel: TTabSheet;
     tab_dados: TTabSheet;
-    GroupBox5: TGroupBox;
+    grp_codigo: TGroupBox;
     pnl_topo: TPanel;
     pnl_fechar: TPanel;
     btn_fechar: TSpeedButton;
