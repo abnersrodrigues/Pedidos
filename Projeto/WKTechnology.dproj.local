@@ -10,12 +10,12 @@
     <Transaction>2022/05/24 16:09:52.000.091,C:\Users\MAC\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\MAC\Desktop\Teste WK Technology\ufrmPrincipal.pas</Transaction>
     <Transaction>2022/05/24 16:09:59.000.154,C:\Users\MAC\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\MAC\Desktop\Teste WK Technology\WKTechnology.dproj</Transaction>
     <Transaction>2022/05/24 16:38:44.000.799,=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
-    <Transaction>2022/05/24 16:40:16.000.539,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas=C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmClientes.pas</Transaction>
     <Transaction>2022/05/24 16:40:16.000.539,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm=C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmClientes.dfm</Transaction>
+    <Transaction>2022/05/24 16:40:16.000.539,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas=C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmClientes.pas</Transaction>
     <Transaction>2022/05/24 16:40:18.000.340,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmClientes.dfm=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm</Transaction>
     <Transaction>2022/05/24 16:40:18.000.340,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmClientes.pas=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
-    <Transaction>2022/05/24 16:45:02.000.752,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm=C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.dfm</Transaction>
     <Transaction>2022/05/24 16:45:02.000.752,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas=C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.pas</Transaction>
+    <Transaction>2022/05/24 16:45:02.000.752,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm=C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.dfm</Transaction>
     <Transaction>2022/05/24 16:45:05.000.175,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.dfm=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm</Transaction>
     <Transaction>2022/05/24 16:45:05.000.175,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.pas=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
     <Transaction>2022/05/24 16:45:32.000.610,=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
@@ -25,10 +25,10 @@
     <Transaction>2022/05/24 16:47:36.000.919,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.pas=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
     <Transaction>2022/05/24 16:47:46.000.533,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm=C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.dfm</Transaction>
     <Transaction>2022/05/24 16:47:46.000.533,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas=C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.pas</Transaction>
-    <Transaction>2022/05/24 16:47:54.000.747,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.pas=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
     <Transaction>2022/05/24 16:47:54.000.747,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.dfm=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm</Transaction>
-    <Transaction>2022/05/24 16:48:58.000.621,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas=C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.pas</Transaction>
+    <Transaction>2022/05/24 16:47:54.000.747,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.pas=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
     <Transaction>2022/05/24 16:48:58.000.621,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm=C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.dfm</Transaction>
+    <Transaction>2022/05/24 16:48:58.000.621,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas=C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmHeranca.pas</Transaction>
     <Transaction>2022/05/24 16:52:31.000.123,=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
     <Transaction>2022/05/24 16:52:46.000.845,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm=C:\Users\MAC\Desktop\Teste WK Technology\dmPrincipal.dfm</Transaction>
     <Transaction>2022/05/24 16:52:46.000.845,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas=C:\Users\MAC\Desktop\Teste WK Technology\dmPrincipal.pas</Transaction>
@@ -52,16 +52,16 @@
     <Transaction>2022/05/25 10:12:56.000.235,=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
     <Transaction>2022/05/25 10:13:42.000.905,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Classes\uPedido.pas=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
     <Transaction>2022/05/25 15:30:54.000.680,=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
-    <Transaction>2022/05/25 15:32:45.000.075,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmQtde.pas=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
     <Transaction>2022/05/25 15:32:45.000.075,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmQtde.dfm=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm</Transaction>
+    <Transaction>2022/05/25 15:32:45.000.075,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmQtde.pas=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
     <Transaction>2022/05/25 17:02:31.000.129,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmQtde.pas=</Transaction>
     <Transaction>2022/05/25 18:00:47.000.531,=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
-    <Transaction>2022/05/25 18:01:20.000.298,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmMovimentacao.pas=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
     <Transaction>2022/05/25 18:01:20.000.298,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmMovimentacao.dfm=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm</Transaction>
+    <Transaction>2022/05/25 18:01:20.000.298,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmMovimentacao.pas=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
     <Transaction>2022/05/26 00:00:20.000.979,=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
     <Transaction>2022/05/26 00:02:20.000.177,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmMovimentacao.pas=</Transaction>
-    <Transaction>2022/05/26 00:02:28.000.094,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmMovimentacao.dfm=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm</Transaction>
     <Transaction>2022/05/26 00:02:28.000.094,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmMovimentacao.pas=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
+    <Transaction>2022/05/26 00:02:28.000.094,C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmMovimentacao.dfm=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm</Transaction>
     <Transaction>2022/05/26 09:16:54.000.292,=C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas</Transaction>
     <Transaction>2022/05/26 09:17:08.000.314,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.dfm=C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmMovimentacaoItem.dfm</Transaction>
     <Transaction>2022/05/26 09:17:08.000.314,C:\Users\MAC\Desktop\Teste WK Technology\Unit1.pas=C:\Users\MAC\Desktop\Teste WK Technology\Fontes\Formularios\ufrmMovimentacaoItem.pas</Transaction>
@@ -69,9 +69,14 @@
     <Transaction>2022/05/26 16:18:28.000.635,C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmEstoque.dfm=C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Unit1.dfm</Transaction>
     <Transaction>2022/05/26 16:18:28.000.635,C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmEstoque.pas=C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Unit1.pas</Transaction>
     <Transaction>2022/05/26 19:36:48.000.576,=C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Unit1.pas</Transaction>
-    <Transaction>2022/05/27 14:45:05.000.429,C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmInventario.dfm=C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmEstoque.dfm</Transaction>
     <Transaction>2022/05/27 14:45:05.000.429,C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmInventario.pas=C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmEstoque.pas</Transaction>
-    <Transaction>2022/05/27 14:45:49.000.979,C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmInventarios.pas=C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmInventario.pas</Transaction>
+    <Transaction>2022/05/27 14:45:05.000.429,C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmInventario.dfm=C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmEstoque.dfm</Transaction>
     <Transaction>2022/05/27 14:45:49.000.979,C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmInventarios.dfm=C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmInventario.dfm</Transaction>
+    <Transaction>2022/05/27 14:45:49.000.979,C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmInventarios.pas=C:\Users\MAC\Desktop\ProjetoWF\ProjetoWF\Projeto\Fontes\Formularios\ufrmInventario.pas</Transaction>
+    <Transaction>2022/05/28 18:08:29.276,=S:\Projetos\ProjetoWF\Projeto\Vcl.Consts.pas</Transaction>
+    <Transaction>2022/05/28 18:14:09.181,S:\Projetos\ProjetoWF\Projeto\Vcl.Consts.pas=</Transaction>
+    <Transaction>2022/05/28 18:14:53.449,=S:\Projetos\ProjetoWF\Projeto\Fontes\Classes\u.Consts.pas</Transaction>
+    <Transaction>2022/05/28 18:15:56.373,S:\Projetos\ProjetoWF\Projeto\Fontes\Classes\u.Consts.pas=</Transaction>
+    <Transaction>2022/05/28 18:16:17.301,=S:\Projetos\ProjetoWF\Projeto\Fontes\Classes\Vcl.Consts.pas</Transaction>
   </Transactions>
 </BorlandProject>

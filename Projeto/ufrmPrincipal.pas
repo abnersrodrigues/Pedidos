@@ -28,7 +28,6 @@ type
     btn_clientes: TSpeedButton;
     pnl_produtos: TPanel;
     btn_produtos: TSpeedButton;
-    Panel1: TPanel;
     pnl_barra_botao: TPanel;
     pnl_pedido: TPanel;
     btn_pedido: TSpeedButton;
@@ -42,6 +41,12 @@ type
     Image1: TImage;
     pnl_registro_estoque: TPanel;
     btn_inventarios: TSpeedButton;
+    pnl_menu: TPanel;
+    pnl_menu_sub: TPanel;
+    btn_sair: TSpeedButton;
+    btn_vendas: TSpeedButton;
+    btn_relatorios: TSpeedButton;
+    btn_menu: TSpeedButton;
     procedure btn_clientesMouseEnter(Sender: TObject);
     procedure btn_clientesMouseLeave(Sender: TObject);
     procedure btn_fecharClick(Sender: TObject);
@@ -50,6 +55,7 @@ type
     procedure btn_produtosClick(Sender: TObject);
     procedure btn_pedidoClick(Sender: TObject);
     procedure btn_inventariosClick(Sender: TObject);
+    procedure btn_menuClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,7 +66,7 @@ type
 var
   frmPrincipal: TfrmPrincipal;
 
-
+  vMenu : Boolean;
 
 implementation
 
@@ -97,12 +103,30 @@ begin
   frmInventarios.Show;
 end;
 
+procedure TfrmPrincipal.btn_menuClick(Sender: TObject);
+begin
+  if vMenu then
+    Begin
+      pnl_menu_sub.Width := 60;
+      pnl_menu.Width := 60;
+    End
+  else
+    Begin
+      pnl_menu_sub.Width :=  180;
+      pnl_menu.Width :=  180;
+    End;
+
+  vMenu := not vMenu;
+
+end;
+
 procedure TfrmPrincipal.btn_fecharClick(Sender: TObject);
 begin
-  if TelaAberta <> '' then
-    ShowMessage('Tela de '+TelaAberta+' em processamento!')
-  else
-    Application.Terminate;
+  if messagedlg('Deseja mesmo sair?', mtconfirmation,[mbyes,mbno],0)= mryes then
+    if TelaAberta <> '' then
+      ShowMessage('Tela de '+TelaAberta+' em processamento!')
+    else
+      Application.Terminate;
 end;
 
 procedure TfrmPrincipal.btn_pedidoClick(Sender: TObject);

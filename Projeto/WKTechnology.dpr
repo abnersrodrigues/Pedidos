@@ -14,7 +14,8 @@ uses
   uPedido in 'Fontes\Classes\uPedido.pas',
   ufrmMovimentacao in 'Fontes\Formularios\ufrmMovimentacao.pas' {frmMovimentacao},
   ufrmMovimentacaoItem in 'Fontes\Formularios\ufrmMovimentacaoItem.pas' {frmItens},
-  ufrmInventarios in 'Fontes\Formularios\ufrmInventarios.pas' {frmInventarios};
+  ufrmInventarios in 'Fontes\Formularios\ufrmInventarios.pas' {frmInventarios},
+  Vcl.Consts in 'Fontes\Classes\Vcl.Consts.pas';
 
 {$R *.res}
 
