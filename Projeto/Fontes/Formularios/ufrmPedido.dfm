@@ -4,6 +4,7 @@ object frmPedido: TfrmPedido
   Top = 0
   Margins.Left = 10
   Margins.Right = 10
+  Margins.Bottom = 10
   Align = alClient
   BorderStyle = bsNone
   Caption = 'Pedido'

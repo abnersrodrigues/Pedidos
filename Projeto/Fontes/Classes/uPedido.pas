@@ -20,6 +20,7 @@ type
     fcodigo_produto: integer;
     fproduto_descricao: string;
     fnome_cliente: String;
+    function AtualizarEstoque(vcodigo:integer; vqtde: double): Boolean;
 
 
     public
@@ -327,9 +328,69 @@ begin
         SQL.Clear;
 
         SQL.Add('UPDATE tab_pedido SET xstatus = :xstatus');
+
+        if sstatus = 'C' then
+          Begin
+            SQl.Add(', data_cancelamento = current_timestamp()')
+          End;
+
+        if sstatus = 'F' then
+          Begin
+            SQl.Add(', data_fechamento = current_timestamp()')
+          End;
         SQL.Add('WHERE CODIGO = :CODIGO');
           Params.ParamByName('CODIGO').AsInteger := codigo;
           Params.ParamByName('xstatus').asString := sstatus;
+        ExecSQL;
+      End;
+
+    if sstatus = 'C' then
+      Begin
+        with qryBusca do
+          Begin
+            Close;
+            SQL.Clear;
+
+            SQL.Add('SELECT * FROM tab_pedido_itens');
+            SQL.Add('WHERE codigo_pedido = :codigo_pedido');
+              Params.ParamByName('codigo_pedido').AsInteger := codigo;
+            Open;
+            if qryBusca.RecordCount <> 0 then
+              Begin
+                while not qryBusca.Eof do
+                  Begin
+                    AtualizarEstoque(qryBusca.FieldByName('Produto').AsInteger, qryBusca.FieldByName('Qtde').AsFloat);
+                    qryBusca.Next;
+                  End;
+              End;
+
+          End;
+      End;
+
+
+    qryBusca.Free;
+    Result := true;
+  Except
+    Result := false;
+  end;
+End;
+
+function TPedido.AtualizarEstoque(vcodigo:integer; vqtde: double):Boolean; //Pos Cancelamento
+Var qryBusca : TFDQuery;
+begin
+  try
+    qryBusca := TFDQuery.Create(Nil);
+    qryBusca.Connection := dmPrincipal.CONEXAO;
+
+    with qryBusca do
+      Begin
+        Close;
+        SQL.Clear;
+
+        SQL.Add('UPDATE tab_produtos SET estoque = estoque + :qtde');
+        SQL.Add('WHERE codigo = :codigo');
+          Params.ParamByName('codigo').AsInteger := vcodigo;
+          Params.ParamByName('qtde').AsFloat := vqtde;
         ExecSQL;
       End;
 
@@ -338,7 +399,6 @@ begin
   Except
     Result := false;
   end;
-
 End;
 
 

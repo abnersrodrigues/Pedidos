@@ -32,7 +32,6 @@ object frmItens: TfrmItens
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 511
     object DBGrid1: TDBGrid
       AlignWithMargins = True
       Left = 20
@@ -58,7 +57,6 @@ object frmItens: TfrmItens
           FieldName = 'codigo'
           Title.Alignment = taCenter
           Title.Caption = 'C'#243'digo'
-          Width = -1
           Visible = False
         end
         item
@@ -132,7 +130,6 @@ object frmItens: TfrmItens
     Color = clWhite
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 511
     object pnl_fechar: TPanel
       AlignWithMargins = True
       Left = 586
@@ -148,7 +145,6 @@ object frmItens: TfrmItens
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 451
       object btn_fechar: TSpeedButton
         AlignWithMargins = True
         Left = 0
@@ -208,7 +204,6 @@ object frmItens: TfrmItens
       Color = clWhite
       ParentBackground = False
       TabOrder = 1
-      ExplicitWidth = 433
       object lbl_titulo_1: TLabel
         AlignWithMargins = True
         Left = 3
@@ -260,7 +255,6 @@ object frmItens: TfrmItens
       Color = 14408667
       ParentBackground = False
       TabOrder = 2
-      ExplicitWidth = 491
     end
   end
 end

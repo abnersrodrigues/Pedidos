@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `tab_clientes` (
   CONSTRAINT `uf` FOREIGN KEY (`UF`) REFERENCES `tab_estados` (`Codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela wf.tab_clientes: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela wf.tab_clientes: ~21 rows (aproximadamente)
 DELETE FROM `tab_clientes`;
 INSERT INTO `tab_clientes` (`Codigo`, `Nome`, `Cidade`, `UF`) VALUES
 	(1, 'CONSUMIDOR FINAL', 'BRASIL', 27),
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `tab_estados` (
   PRIMARY KEY (`Codigo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela wf.tab_estados: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela wf.tab_estados: ~27 rows (aproximadamente)
 DELETE FROM `tab_estados`;
 INSERT INTO `tab_estados` (`Codigo`, `Descricao`, `Sigla`) VALUES
 	(1, 'Acre', 'AC'),
@@ -114,6 +114,9 @@ CREATE TABLE IF NOT EXISTS `tab_inventarios` (
 
 -- Copiando dados para a tabela wf.tab_inventarios: ~0 rows (aproximadamente)
 DELETE FROM `tab_inventarios`;
+INSERT INTO `tab_inventarios` (`Codigo`, `Codigo_Produto`, `Qtde_Anterior`, `Qtde_Lancamento`, `Tipo_Lancamento`, `Data_Lancamento`, `Descricao_Lancamento`) VALUES
+	(1, 1, 0.00, 25.00, 'E', '2022-05-28 17:22:29', 'Compra dia 28/05/2022'),
+	(2, 3, 0.00, 14.00, 'E', '2022-05-28 17:22:56', 'Compra dia 27/05/2022');
 
 -- Copiando estrutura para tabela wf.tab_pedido
 DROP TABLE IF EXISTS `tab_pedido`;
@@ -124,18 +127,21 @@ CREATE TABLE IF NOT EXISTS `tab_pedido` (
   `VTotal` decimal(9,2) NOT NULL DEFAULT 0.00,
   `XStatus` char(1) NOT NULL DEFAULT 'A',
   `data_emissao` timestamp NOT NULL DEFAULT current_timestamp(),
+  `data_cancelamento` timestamp NULL DEFAULT NULL,
+  `data_fechamento` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`Codigo`),
   KEY `cliente` (`Codigo_Cliente`),
   CONSTRAINT `cliente` FOREIGN KEY (`Codigo_Cliente`) REFERENCES `tab_clientes` (`Codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela wf.tab_pedido: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela wf.tab_pedido: ~5 rows (aproximadamente)
 DELETE FROM `tab_pedido`;
-INSERT INTO `tab_pedido` (`Codigo`, `Codigo_Cliente`, `Qtde_Itens`, `VTotal`, `XStatus`, `data_emissao`) VALUES
-	(1, 1, 2.00, 299.56, 'F', '2022-05-28 15:33:44'),
-	(2, 3, 3.00, 207.37, 'C', '2022-05-28 15:34:18'),
-	(3, 6, 1.00, 84.90, 'A', '2022-05-28 15:34:34'),
-	(4, 20, 1.00, 48.00, 'F', '2022-05-28 15:34:56');
+INSERT INTO `tab_pedido` (`Codigo`, `Codigo_Cliente`, `Qtde_Itens`, `VTotal`, `XStatus`, `data_emissao`, `data_cancelamento`, `data_fechamento`) VALUES
+	(1, 4, 3.00, 323.53, 'F', '2022-05-28 17:11:52', NULL, '2022-05-28 17:13:53'),
+	(2, 18, 2.00, 183.40, 'A', '2022-05-28 17:12:51', NULL, NULL),
+	(3, 6, 1.00, 84.90, 'C', '2022-05-28 17:13:08', '2022-05-28 17:13:43', NULL),
+	(4, 20, 1.00, 48.00, 'F', '2022-05-28 17:13:35', NULL, '2022-05-28 17:13:54'),
+	(5, 1, 1.00, 57.00, 'A', '2022-05-28 17:19:45', NULL, NULL);
 
 -- Copiando estrutura para tabela wf.tab_pedido_itens
 DROP TABLE IF EXISTS `tab_pedido_itens`;
@@ -152,18 +158,19 @@ CREATE TABLE IF NOT EXISTS `tab_pedido_itens` (
   KEY `pedido` (`Codigo_Pedido`),
   CONSTRAINT `pedido` FOREIGN KEY (`Codigo_Pedido`) REFERENCES `tab_pedido` (`Codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `produtos` FOREIGN KEY (`Produto`) REFERENCES `tab_produtos` (`Codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela wf.tab_pedido_itens: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela wf.tab_pedido_itens: ~8 rows (aproximadamente)
 DELETE FROM `tab_pedido_itens`;
 INSERT INTO `tab_pedido_itens` (`Codigo`, `Codigo_Pedido`, `Produto`, `Qtde`, `VUnit`, `VTotal`, `Ind_Cancelamento`) VALUES
 	(1, 1, 1, 10.00, 23.98, 239.80, 'N'),
 	(2, 1, 2, 12.00, 4.98, 59.76, 'N'),
-	(3, 2, 3, 3.00, 7.99, 23.97, 'N'),
+	(3, 1, 3, 3.00, 7.99, 23.97, 'N'),
 	(4, 2, 4, 5.00, 5.00, 25.00, 'N'),
 	(5, 2, 5, 8.00, 19.80, 158.40, 'N'),
 	(6, 3, 6, 10.00, 8.49, 84.90, 'N'),
-	(7, 4, 7, 4.00, 12.00, 48.00, 'N');
+	(7, 4, 7, 4.00, 12.00, 48.00, 'N'),
+	(8, 5, 8, 6.00, 9.50, 57.00, 'N');
 
 -- Copiando estrutura para tabela wf.tab_produtos
 DROP TABLE IF EXISTS `tab_produtos`;
@@ -175,17 +182,17 @@ CREATE TABLE IF NOT EXISTS `tab_produtos` (
   PRIMARY KEY (`Codigo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela wf.tab_produtos: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela wf.tab_produtos: ~20 rows (aproximadamente)
 DELETE FROM `tab_produtos`;
 INSERT INTO `tab_produtos` (`Codigo`, `Descricao`, `Valor`, `Estoque`) VALUES
-	(1, 'ESCORREDOR DE LOUÇA', 23.98, 0.00),
+	(1, 'ESCORREDOR DE LOUÇA', 23.98, 25.00),
 	(2, 'SALEIRO', 4.98, 0.00),
-	(3, 'ABRIDORES DE GARRAFA', 7.99, 0.00),
+	(3, 'ABRIDORES DE GARRAFA', 7.99, 14.00),
 	(4, 'BATEDOR DE CARNE', 5.00, 0.00),
 	(5, 'COLHERES DE PAU E MEDIDORA', 19.80, 0.00),
-	(6, 'CONCHA', 8.49, 0.00),
+	(6, 'CONCHA', 8.49, 10.00),
 	(7, 'ESCUMADEIRA', 12.00, 0.00),
-	(8, 'ESPÁTULA', 9.50, 6.00),
+	(8, 'ESPÁTULA', 9.50, 0.00),
 	(9, 'JARRA MEDIDORA', 24.90, 7.00),
 	(10, 'JOGO DE TALHERES', 49.50, 2.00),
 	(11, 'LUVA TÉRMICA', 4.99, 30.00),

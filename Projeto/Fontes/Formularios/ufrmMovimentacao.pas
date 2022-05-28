@@ -85,6 +85,17 @@ end;
 
 procedure TfrmMovimentacao.btn_alterarClick(Sender: TObject);
 begin
+  if dmPrincipal.qry_pedidosxstatus.AsString = 'C' then
+    Begin
+      ShowMessage('Não permitido edição para pedido cancelado');
+      Exit;
+    end;
+  if dmPrincipal.qry_pedidosxstatus.AsString = 'F' then
+    Begin
+      ShowMessage('Não permitido edição para pedido já fechado');
+      Exit;
+    end;
+
   frmItens           := TfrmItens.Create( frmMovimentacao );
   frmItens.Parent    := frmMovimentacao.pnl_centro.Parent;
   frmItens.Show;
@@ -92,13 +103,20 @@ end;
 
 procedure TfrmMovimentacao.btn_cancelar_pedidoClick(Sender: TObject);
 begin
-  if not uPedido.AtualizarStatus(dmPrincipal.qry_pedidoscodigo.Value, 'C') then
-    Begin
-      ShowMessage('Erro ao fechar Pedido');
-      exit;
-    End
+  if messagedlg('Deseja mesmo excluir?', mtconfirmation,[mbyes,mbno],0)= mryes then
+    begin
+      if not uPedido.AtualizarStatus(dmPrincipal.qry_pedidoscodigo.Value, 'C') then
+        Begin
+          ShowMessage('Erro ao fechar Pedido');
+          exit;
+        End
+      else
+        Begin
+          dmPrincipal.qry_pedidos.Refresh;
+        End;
+    end
   else
-    dmPrincipal.qry_pedidos.Refresh;
+     abort;
 end;
 
 procedure TfrmMovimentacao.btn_deletarClick(Sender: TObject);

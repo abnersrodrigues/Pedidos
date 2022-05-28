@@ -66,6 +66,8 @@ CREATE TABLE IF NOT EXISTS `tab_pedido` (
   `VTotal` decimal(9,2) NOT NULL DEFAULT 0.00,
   `XStatus` char(1) NOT NULL DEFAULT 'A',
   `data_emissao` timestamp NOT NULL DEFAULT current_timestamp(),
+  `data_cancelamento` timestamp NULL DEFAULT NULL,
+  `data_fechamento` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`Codigo`),
   KEY `cliente` (`Codigo_Cliente`),
   CONSTRAINT `cliente` FOREIGN KEY (`Codigo_Cliente`) REFERENCES `tab_clientes` (`Codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION

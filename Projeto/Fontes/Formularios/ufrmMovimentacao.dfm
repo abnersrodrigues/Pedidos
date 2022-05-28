@@ -4,10 +4,11 @@ object frmMovimentacao: TfrmMovimentacao
   Top = 0
   Margins.Left = 10
   Margins.Right = 10
+  Margins.Bottom = 10
   Align = alClient
   BorderStyle = bsNone
   Caption = 'Movimenta'#231#227'o'
-  ClientHeight = 725
+  ClientHeight = 553
   ClientWidth = 747
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -25,12 +26,13 @@ object frmMovimentacao: TfrmMovimentacao
     Left = 0
     Top = 48
     Width = 747
-    Height = 677
+    Height = 505
     Align = alClient
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
+    ExplicitHeight = 677
     object pnl_botoes: TPanel
       Left = 0
       Top = 0
@@ -312,10 +314,11 @@ object frmMovimentacao: TfrmMovimentacao
       Left = 5
       Top = 132
       Width = 737
-      Height = 542
+      Height = 363
       Margins.Left = 5
       Margins.Top = 10
       Margins.Right = 5
+      Margins.Bottom = 10
       Align = alClient
       DataSource = dmPrincipal.ds_pedidos
       PopupMenu = PopupMenu1

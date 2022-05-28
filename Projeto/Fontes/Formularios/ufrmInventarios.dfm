@@ -1,5 +1,4 @@
 inherited frmInventarios: TfrmInventarios
-  Margins.Bottom = 10
   Caption = 'Entradas Estoque'
   ClientWidth = 912
   ExplicitWidth = 912
@@ -10,9 +9,13 @@ inherited frmInventarios: TfrmInventarios
     ExplicitWidth = 912
     inherited pgcPrincipal: TPageControl
       Width = 892
+      ActivePage = tab_dados
       ExplicitWidth = 892
       inherited tab_painel: TTabSheet
+        ExplicitLeft = 4
+        ExplicitTop = 31
         ExplicitWidth = 884
+        ExplicitHeight = 503
         inherited grd_painel: TDBGrid
           Width = 874
           DataSource = dmPrincipal.ds_estoque
@@ -76,7 +79,6 @@ inherited frmInventarios: TfrmInventarios
             item
               Expanded = False
               FieldName = 'Descricao_Lancamento'
-              Width = -1
               Visible = False
             end>
         end
@@ -99,7 +101,10 @@ inherited frmInventarios: TfrmInventarios
         end
       end
       inherited tab_dados: TTabSheet
+        ExplicitLeft = 4
+        ExplicitTop = 31
         ExplicitWidth = 884
+        ExplicitHeight = 503
         object ScrollBox: TScrollBox [0]
           Left = 0
           Top = 60
@@ -108,7 +113,6 @@ inherited frmInventarios: TfrmInventarios
           Align = alClient
           BorderStyle = bsNone
           TabOrder = 1
-          ExplicitTop = 0
           object grp_cod_produto: TGroupBox
             AlignWithMargins = True
             Left = 10
@@ -120,8 +124,6 @@ inherited frmInventarios: TfrmInventarios
             Align = alTop
             Caption = 'C'#243'digo Produto'
             TabOrder = 0
-            ExplicitTop = 63
-            ExplicitWidth = 757
             object btn_busca_produtos: TImage
               AlignWithMargins = True
               Left = 726
@@ -184,7 +186,6 @@ inherited frmInventarios: TfrmInventarios
               BorderStyle = bsNone
               TabOrder = 0
               OnKeyPress = edt_cod_produtoKeyPress
-              ExplicitWidth = 733
             end
           end
           object grp_descricao_produto: TGroupBox
@@ -198,8 +199,6 @@ inherited frmInventarios: TfrmInventarios
             Align = alTop
             Caption = 'Decri'#231#227'o Produto'
             TabOrder = 1
-            ExplicitTop = 123
-            ExplicitWidth = 757
             object edt_descricao_produto: TEdit
               AlignWithMargins = True
               Left = 12
@@ -214,7 +213,6 @@ inherited frmInventarios: TfrmInventarios
               BorderStyle = bsNone
               Enabled = False
               TabOrder = 0
-              ExplicitWidth = 733
             end
           end
           object grp_qtde_anterior: TGroupBox
@@ -228,8 +226,6 @@ inherited frmInventarios: TfrmInventarios
             Align = alTop
             Caption = 'Qtde Anterior'
             TabOrder = 3
-            ExplicitTop = 243
-            ExplicitWidth = 757
             object edt_qtde_anterior: TEdit
               AlignWithMargins = True
               Left = 12
@@ -244,7 +240,6 @@ inherited frmInventarios: TfrmInventarios
               BorderStyle = bsNone
               Enabled = False
               TabOrder = 0
-              ExplicitWidth = 733
             end
           end
           object grp_qtde_atual: TGroupBox
@@ -258,8 +253,6 @@ inherited frmInventarios: TfrmInventarios
             Align = alTop
             Caption = 'Qtde_Lancamento'
             TabOrder = 2
-            ExplicitTop = 183
-            ExplicitWidth = 757
             object edt_qtde_lancamento: TEdit
               AlignWithMargins = True
               Left = 12
@@ -273,7 +266,6 @@ inherited frmInventarios: TfrmInventarios
               Align = alClient
               BorderStyle = bsNone
               TabOrder = 0
-              ExplicitWidth = 733
             end
           end
           object grp_tipo_lancamento: TGroupBox
@@ -287,8 +279,6 @@ inherited frmInventarios: TfrmInventarios
             Align = alTop
             Caption = 'Tipo de Lan'#231'amento'
             TabOrder = 4
-            ExplicitTop = 303
-            ExplicitWidth = 757
             object cmb_tipo_lancamento: TComboBox
               AlignWithMargins = True
               Left = 12
@@ -307,7 +297,6 @@ inherited frmInventarios: TfrmInventarios
               Items.Strings = (
                 'ENTRADA'
                 'SAIDA')
-              ExplicitWidth = 733
             end
           end
           object grp_desc_lancamento: TGroupBox
@@ -321,8 +310,6 @@ inherited frmInventarios: TfrmInventarios
             Align = alTop
             Caption = 'Descri'#231#227'o do Lan'#231'amento'
             TabOrder = 5
-            ExplicitTop = 363
-            ExplicitWidth = 757
             object edt_descricao_lancamento: TEdit
               AlignWithMargins = True
               Left = 12
@@ -336,7 +323,6 @@ inherited frmInventarios: TfrmInventarios
               Align = alClient
               BorderStyle = bsNone
               TabOrder = 0
-              ExplicitWidth = 733
             end
           end
           object grp_data_lancamento: TGroupBox
@@ -350,8 +336,6 @@ inherited frmInventarios: TfrmInventarios
             Align = alTop
             Caption = 'Data Lan'#231'amento'
             TabOrder = 6
-            ExplicitTop = 423
-            ExplicitWidth = 757
             object edt_data_lancamento: TEdit
               AlignWithMargins = True
               Left = 12
@@ -366,7 +350,6 @@ inherited frmInventarios: TfrmInventarios
               BorderStyle = bsNone
               Enabled = False
               TabOrder = 0
-              ExplicitWidth = 733
             end
           end
         end
@@ -388,8 +371,6 @@ inherited frmInventarios: TfrmInventarios
             BorderStyle = bsNone
             Enabled = False
             TabOrder = 0
-            ExplicitLeft = 14
-            ExplicitTop = 29
           end
         end
       end
@@ -437,6 +418,12 @@ inherited frmInventarios: TfrmInventarios
     inherited pnl_Titulo: TPanel
       Width = 834
       ExplicitWidth = 834
+      inherited lbl_titulo_1: TLabel
+        Height = 35
+      end
+      inherited lbl_titulo_2: TLabel
+        Height = 35
+      end
     end
     inherited pnl_barra_menu: TPanel
       Width = 892

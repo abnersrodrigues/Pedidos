@@ -342,42 +342,48 @@ begin
       Exit;
     End;
 
-  uPedido.nome_cliente := cmb_clientes.Text;
-  uPedido.vtotal       := qry_temp.Aggregates[0].Value;
-  uPedido.qtde_itens   := qry_temp.RecordCount;
+  if cmb_clientes.Text = 'CONSUMIDOR FINAL' then
+    if messagedlg('Cliente CONSUMIDOR FINAL: Deseja mesmo prosseguir?', mtconfirmation,[mbyes,mbno],0)= mryes then
+      Begin
+        uPedido.nome_cliente := cmb_clientes.Text;
+        uPedido.vtotal       := qry_temp.Aggregates[0].Value;
+        uPedido.qtde_itens   := qry_temp.RecordCount;
 
-  if not uPedido.AddPedido then
-    Begin
-      ShowMessage('Erro ao incluir Pedido. Verifique!');
-      Exit;
-    End
-  else
-    Begin
-      lbl_pedido.Caption := inttostr(uPedido.codigo_pedido);
+        if not uPedido.AddPedido then
+          Begin
+            ShowMessage('Erro ao incluir Pedido. Verifique!');
+            Exit;
+          End
+        else
+          Begin
+            lbl_pedido.Caption := inttostr(uPedido.codigo_pedido);
 
-      qry_temp.First;
-      while not qry_temp.Eof do
-        Begin
-          uPedido.codigo_pedido  := strtoint(lbl_pedido.Caption);
-          uPedido.qtde           := qry_tempQtde.Value;
-          uPedido.codigo_produto := qry_tempProduto.Value;
-          uPedido.vunit          := qry_tempVUnit.Value;
-          uPedido.vtotal         := qry_temp.FieldByName('vlr_total').Value;
-          uPedido.xstatus        := qry_tempInd_Cancelamento.Value;
+            qry_temp.First;
+            while not qry_temp.Eof do
+              Begin
+                uPedido.codigo_pedido  := strtoint(lbl_pedido.Caption);
+                uPedido.qtde           := qry_tempQtde.Value;
+                uPedido.codigo_produto := qry_tempProduto.Value;
+                uPedido.vunit          := qry_tempVUnit.Value;
+                uPedido.vtotal         := qry_temp.FieldByName('vlr_total').Value;
+                uPedido.xstatus        := qry_tempInd_Cancelamento.Value;
 
-          if not uPedido.AddItem then
-            Begin
-              ShowMessage('Erro ao incluir Item: '+ qry_tempnome_produto.Value+#13+'Verifique!');
-            End;
+                if not uPedido.AddItem then
+                  Begin
+                    ShowMessage('Erro ao incluir Item: '+ qry_tempnome_produto.Value+#13+'Verifique!');
+                  End;
 
-          qry_temp.Next;
-        End;
-    End;
-  ShowMessage('Lançado com Sucesso');
+                qry_temp.Next;
+              End;
+          End;
+        ShowMessage('Lançado com Sucesso');
 
-  grp_lancamentos.Enabled := false;
-  uPedido.AtualizarPedido(strtoint(lbl_pedido.Caption));
-  btn_salvar.Enabled := false;
+        grp_lancamentos.Enabled := false;
+        uPedido.AtualizarPedido(strtoint(lbl_pedido.Caption));
+        btn_salvar.Enabled := false;
+      End
+    else
+      abort;
 end;
 
 procedure TfrmPedido.btn_cancelarClick(Sender: TObject);

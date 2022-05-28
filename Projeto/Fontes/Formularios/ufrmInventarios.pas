@@ -192,6 +192,8 @@ begin
 
       uProdutos.BuscaEstAtual(strtoint(edt_cod_produto.Text), vestoque);
       edt_qtde_anterior.Text := vestoque.ToString;
+
+      edt_qtde_lancamento.SetFocus;
     End;
 end;
 

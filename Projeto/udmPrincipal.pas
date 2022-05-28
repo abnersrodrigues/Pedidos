@@ -87,31 +87,34 @@ begin
   begin
     FieldByName('vlr_item').AsFloat := FieldByName('Qtde').AsFloat * FieldByName('VUnit').AsFloat;
 
-    try
-      qryBusca := TFDQuery.Create(Nil);
-      qryBusca.Connection := dmPrincipal.CONEXAO;
+    if (qry_pedidos_itens.state in [dsEdit]) then
+      Begin
+        try
+          qryBusca := TFDQuery.Create(Nil);
+          qryBusca.Connection := dmPrincipal.CONEXAO;
 
-      with qryBusca do
-        Begin
-          Close;
-          SQL.Clear;
-          SQL.Add('UPDATE tab_pedido_itens SET qtde = :qtde, VUnit = :vunit, VTotal = :vTotal');
-          SQL.Add('WHERE codigo = :codigo');
-            Params.ParamByName('codigo').AsInteger := qry_pedidos_itenscodigo.Value;
-            Params.ParamByName('qtde').AsFloat := qry_pedidos_itensqtde.AsFloat;
-            Params.ParamByName('vunit').AsFloat := qry_pedidos_itensvunit.AsFloat;
-            Params.ParamByName('vTotal').AsFloat := qry_pedidos_itens.FieldByName('vlr_item').asFloat;
-          ExecSQL;
-        End;
+          with qryBusca do
+            Begin
+              Close;
+              SQL.Clear;
+              SQL.Add('UPDATE tab_pedido_itens SET qtde = :qtde, VUnit = :vunit, VTotal = :vTotal');
+              SQL.Add('WHERE codigo = :codigo');
+                Params.ParamByName('codigo').AsInteger := qry_pedidos_itenscodigo.Value;
+                Params.ParamByName('qtde').AsFloat := qry_pedidos_itensqtde.AsFloat;
+                Params.ParamByName('vunit').AsFloat := qry_pedidos_itensvunit.AsFloat;
+                Params.ParamByName('vTotal').AsFloat := qry_pedidos_itens.FieldByName('vlr_item').asFloat;
+              ExecSQL;
+            End;
 
-      uPedido := TPedido.Create;
-      uPedido.AtualizarPedido(qry_pedidoscodigo.Value);
-      uPedido.Free;
+          uPedido := TPedido.Create;
+          uPedido.AtualizarPedido(qry_pedidoscodigo.Value);
+          uPedido.Free;
 
-      qryBusca.Free;
-    Except
-      Exit;
-    end;
+          qryBusca.Free;
+        Except
+          Exit;
+        end;
+      end;
   end;
 end;
 
