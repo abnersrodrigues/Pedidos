@@ -15,7 +15,10 @@ uses
   ufrmMovimentacao in 'Fontes\Formularios\ufrmMovimentacao.pas' {frmMovimentacao},
   ufrmMovimentacaoItem in 'Fontes\Formularios\ufrmMovimentacaoItem.pas' {frmItens},
   ufrmInventarios in 'Fontes\Formularios\ufrmInventarios.pas' {frmInventarios},
-  Vcl.Consts in 'Fontes\Classes\Vcl.Consts.pas';
+  Vcl.Consts in 'Fontes\Classes\Vcl.Consts.pas',
+  ufrmConfiguracoes in 'Fontes\Formularios\ufrmConfiguracoes.pas' {frmConfiguracoes},
+  uClasses in 'Fontes\Classes\uClasses.pas',
+  uFuncaoCriptografia in 'Fontes\Classes\uFuncaoCriptografia.pas';
 
 {$R *.res}
 
@@ -27,5 +30,6 @@ begin
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TfrmHeranca, frmHeranca);
   Application.CreateForm(TfrmInventarios, frmInventarios);
+  Application.CreateForm(TfrmConfiguracoes, frmConfiguracoes);
   Application.Run;
 end.

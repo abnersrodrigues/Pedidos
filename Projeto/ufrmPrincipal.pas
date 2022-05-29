@@ -56,6 +56,7 @@ type
     procedure btn_pedidoClick(Sender: TObject);
     procedure btn_inventariosClick(Sender: TObject);
     procedure btn_menuClick(Sender: TObject);
+    procedure btn_configuracoesClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -73,7 +74,7 @@ implementation
 {$R *.dfm}
 
 uses ufrmClientes, udmPrincipal, ufrmProdutos, ufrmPedido, ufrmMovimentacao,
-  ufrmInventarios;
+  ufrmInventarios, ufrmConfiguracoes;
 
 procedure TfrmPrincipal.btn_clientesClick(Sender: TObject);
 begin
@@ -93,6 +94,18 @@ procedure TfrmPrincipal.btn_clientesMouseLeave(Sender: TObject);
 begin
   focar_botao( Self, pnl_barra_botao, ( TComponent ( Sender ) as TspeedButton ),
                false, 'MENU' );
+end;
+
+procedure TfrmPrincipal.btn_configuracoesClick(Sender: TObject);
+begin
+  Application.CreateForm(TfrmConfiguracoes, frmConfiguracoes);
+  frmConfiguracoes.Parent := pnl_principal.Parent;
+  frmConfiguracoes.Show;
+
+//  frmConfiguracoes.top := round( ((pnl_principal.Height div 2) - (frmConfiguracoes.height div 2))+20);
+//  frmConfiguracoes.left := round( (pnl_principal.Width div 2) - (frmConfiguracoes.width div 2) );
+
+  TelaAberta       := frmConfiguracoes.Caption;
 end;
 
 procedure TfrmPrincipal.btn_inventariosClick(Sender: TObject);
@@ -147,14 +160,18 @@ end;
 
 procedure TfrmPrincipal.FormShow(Sender: TObject);
 begin
-  lbl_computador.Caption  := 'COMPUTADOR: '+ GetComputerNameFunc;
-  lbl_data.Caption        := 'Data: '+ DateToStr(date);
-
-
-  if not AbreBD then
+  if not FileExists(ChangeFileExt( Application.Exename, '.ini')) then
     Begin
-      ShowMessage('Erro ao abrir Banco de Dados');
-      Exit;
+      btn_configuracoesClick(Self);
+    End
+  else
+    Begin
+      if not AbreBD then
+        Begin
+          ShowMessage('Erro ao abrir Banco de Dados');
+          btn_configuracoesClick(Self);
+          Exit;
+        End;
     End;
 end;
 

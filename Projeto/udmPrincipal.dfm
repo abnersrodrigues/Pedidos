@@ -4,16 +4,14 @@
   Width = 714
   object CONEXAO: TFDConnection
     Params.Strings = (
-      'Database=WF'
-      'User_Name=root'
-      'Password=Abner@2022'
-      'Server=localhost'
+      'Server='
+      'Port='
       'DriverID=MySQL')
     LoginPrompt = False
     Left = 88
     Top = 32
   end
-  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+  object FDPhysMySQLDriverLink: TFDPhysMySQLDriverLink
     VendorLib = 'S:\Projetos\ProjetoWF\Projeto\Dll\libmysql.dll'
     Left = 80
     Top = 368

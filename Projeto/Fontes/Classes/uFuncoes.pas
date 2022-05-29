@@ -10,7 +10,7 @@ uses
   REST.Types, System.JSON, REST.Response.Adapter,
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Stan.StorageBin, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+  FireDAC.Stan.StorageBin, FireDAC.Comp.DataSet, FireDAC.Comp.Client, uClasses;
 
     //Procedures
 
@@ -108,12 +108,20 @@ end;
 
 
 function AbreBD: Boolean;
+Var uClasses : TClasses;
 Begin
   try
-    dmPrincipal.CONEXAO.Connected  := true;
+    uClasses := TClasses.Create;
+    uClasses.fnc_LerIni;
+
+    uClasses.fnc_configura_bd;
+
+    dmPrincipal.CONEXAO.Connected := true;
+
     Result := true;
   Except
     Result := false;
+    uClasses.Free;
   end;
 End;
 

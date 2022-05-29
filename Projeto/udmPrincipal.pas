@@ -13,7 +13,7 @@ uses
 type
   TdmPrincipal = class(TDataModule)
     CONEXAO: TFDConnection;
-    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+    FDPhysMySQLDriverLink: TFDPhysMySQLDriverLink;
     qry_clientes: TFDQuery;
     qry_produtos: TFDQuery;
     qry_pedidos: TFDQuery;
