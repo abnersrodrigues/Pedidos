@@ -100,25 +100,50 @@ begin
 
     BuscaEstado(uf_sigla);
 
-
-    with qryBusca do
+    try
+      with qryBusca do
+        Begin
+          Close;
+          SQL.Clear;
+          SQL.Add('INSERT INTO tab_clientes (nome, cidade, uf)');
+          SQL.Add('VALUES (:nome, :cidade, :uf)');
+            Params.ParamByName('nome').AsString   := nome;
+            Params.ParamByName('cidade').AsString := cidade;
+            Params.ParamByName('uf').asInteger    := uf;
+          ExecSQL;
+        End;
+    Except
       Begin
-        Close;
-        SQL.Clear;
-        SQL.Add('INSERT INTO tab_clientes (nome, cidade, uf)');
-        SQL.Add('VALUES (:nome, :cidade, :uf) RETURNING codigo');
-          Params.ParamByName('nome').AsString   := nome;
-          Params.ParamByName('cidade').AsString := cidade;
-          Params.ParamByName('uf').asInteger    := uf;
-        Open;
-
-        codigo := qryBusca.FieldByName('codigo').AsInteger;
+        Result := false;
+        Exit;
       End;
+    end;
+
+    //Buscando codigo da inserção
+    try
+      with qryBusca do
+        Begin
+          Close;
+          SQL.Clear;
+          SQL.Add('SELECT codigo FROM tab_clientes');
+          SQL.Add('WHERE nome LIKE :nome');
+            Params.ParamByName('nome').AsString   := nome;
+          Open;
+
+          codigo := qryBusca.FieldByName('codigo').AsInteger;
+
+        End;
+    Except
+      Result := false;
+    end;
 
     qryBusca.Free;
     Result := true;
   Except
-    Result := false;
+    Begin
+      Result := false;
+      Exit;
+    End;
   end;
 end;
 

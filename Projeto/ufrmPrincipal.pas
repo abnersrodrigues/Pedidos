@@ -98,12 +98,15 @@ end;
 
 procedure TfrmPrincipal.btn_configuracoesClick(Sender: TObject);
 begin
+  if TelaAberta = frmConfiguracoes.Caption then
+    Begin
+      ShowMessage('Tela já em processamento');
+      exit;
+    End;
+
   Application.CreateForm(TfrmConfiguracoes, frmConfiguracoes);
   frmConfiguracoes.Parent := pnl_principal.Parent;
   frmConfiguracoes.Show;
-
-//  frmConfiguracoes.top := round( ((pnl_principal.Height div 2) - (frmConfiguracoes.height div 2))+20);
-//  frmConfiguracoes.left := round( (pnl_principal.Width div 2) - (frmConfiguracoes.width div 2) );
 
   TelaAberta       := frmConfiguracoes.Caption;
 end;

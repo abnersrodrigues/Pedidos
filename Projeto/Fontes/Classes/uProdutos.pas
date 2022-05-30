@@ -102,19 +102,39 @@ begin
     qryBusca := TFDQuery.Create(Nil);
     qryBusca.Connection := dmPrincipal.CONEXAO;
 
-    with qryBusca do
-      Begin
-        Close;
-        SQL.Clear;
-        SQL.Add('INSERT INTO tab_produtos (descricao, valor, estoque)');
-        SQL.Add('VALUES (:descricao, :valor, :estoque) RETURNING codigo');
-          Params.ParamByName('descricao').AsString  := descricao;
-          Params.ParamByName('valor').AsFloat       := valor;
-          Params.ParamByName('estoque').AsFloat     := estoque;
-        Open;
+    try
+      with qryBusca do
+        Begin
+          Close;
+          SQL.Clear;
+          SQL.Add('INSERT INTO tab_produtos (descricao, valor, estoque)');
+          SQL.Add('VALUES (:descricao, :valor, :estoque)');
+            Params.ParamByName('descricao').AsString  := descricao;
+            Params.ParamByName('valor').AsFloat       := valor;
+            Params.ParamByName('estoque').AsFloat     := estoque;
+          ExecSQL;
+        End;
+    Except
+      Result := false;
+    end;
 
-        codigo := qryBusca.FieldByName('codigo').AsInteger;
-      End;
+    //Buscando codigo da inserção
+    try
+      with qryBusca do
+        Begin
+          Close;
+          SQL.Clear;
+          SQL.Add('SELECT codigo FROM tab_produtos');
+          SQL.Add('WHERE descricao LIKE :descricao');
+            Params.ParamByName('descricao').AsString   := descricao;
+          Open;
+
+          codigo := qryBusca.FieldByName('codigo').AsInteger;
+
+        End;
+    Except
+      Result := false;
+    end;
 
     qryBusca.Free;
     Result := true;

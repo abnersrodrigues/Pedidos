@@ -170,20 +170,39 @@ begin
 
     BuscaCliente(nome_cliente);
 
-    with qryBusca do
-      Begin
-        Close;
-        SQL.Clear;
-        SQL.Add('INSERT INTO tab_pedido (codigo_cliente, qtde_itens, vtotal, xstatus)');
-        SQL.Add('VALUES (:codigo_cliente, :qtde_itens, :vtotal, :xstatus) RETURNING codigo');
-          Params.ParamByName('codigo_cliente').AsInteger := codigo_cliente;
-          Params.ParamByName('qtde_itens').AsFloat := qtde_itens;
-          Params.ParamByName('vtotal').AsFloat := vtotal;
-          Params.ParamByName('xstatus').asString := 'A';
-        Open;
+    try
+      with qryBusca do
+        Begin
+          Close;
+          SQL.Clear;
+          SQL.Add('INSERT INTO tab_pedido (codigo_cliente, qtde_itens, vtotal, xstatus)');
+          SQL.Add('VALUES (:codigo_cliente, :qtde_itens, :vtotal, :xstatus)');
+            Params.ParamByName('codigo_cliente').AsInteger := codigo_cliente;
+            Params.ParamByName('qtde_itens').AsFloat := qtde_itens;
+            Params.ParamByName('vtotal').AsFloat := vtotal;
+            Params.ParamByName('xstatus').asString := 'A';
+          ExecSQL;
+        End;
+    Except
+      Result := false;
+    end;
 
-        codigo_pedido := qryBusca.FieldByName('codigo').AsInteger;
-      End;
+    try
+      with qryBusca do
+        Begin
+          Close;
+          SQL.Clear;
+          SQL.Add('SELECT codigo FROM tab_pedido');
+          SQL.Add('ORDER BY 1 desc');
+          SQL.Add('LIMIT 1');
+          Open;
+
+          codigo_pedido := qryBusca.FieldByName('codigo').AsInteger;
+
+        End;
+    Except
+      Result := false;
+    end;
 
     qryBusca.Free;
     Result := true;
