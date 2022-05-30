@@ -10,7 +10,10 @@ Se desejar criar zerado rodar na seguencia
 
 
 
-============== Atualiza��o do dia 28/05/2020 ==============
-1) Inclus�o tela de Invent�rio
-2) Ajuste na Trigger Atualiza��o de Estoque
+  ============== Atualização do dia 28/05/2022 ======================
+1) Inclusão tela de Inventário
+2) Ajuste na Trigger Atualização de Estoque
 3) Ajuste na Tela Itens dos Pedidos (colunas)
+
+==============  Atalização do dia 30/05/2022  =========================
+1) Implementação arquivo .ini para inicialização
